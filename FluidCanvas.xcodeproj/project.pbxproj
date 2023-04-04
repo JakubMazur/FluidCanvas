@@ -11,6 +11,10 @@
 		DDC827A1294670B900E92450 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC827A0294670B900E92450 /* ViewController.swift */; };
 		DDC827A3294670BA00E92450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC827A2294670BA00E92450 /* Assets.xcassets */; };
 		DDC827A6294670BA00E92450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC827A4294670BA00E92450 /* Main.storyboard */; };
+		DDC827AF2946712400E92450 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = DDC827AE2946712400E92450 /* StableDiffusion */; };
+		DDC827B12946712400E92450 /* StableDiffusionSample in Frameworks */ = {isa = PBXBuildFile; productRef = DDC827B02946712400E92450 /* StableDiffusionSample */; };
+		DDC827BE294789F600E92450 /* models in Resources */ = {isa = PBXBuildFile; fileRef = DDC827BD294789F600E92450 /* models */; };
+		DDC827C12947BB6B00E92450 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDC827C02947BB6B00E92450 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,7 @@
 		DDC827A2294670BA00E92450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDC827A5294670BA00E92450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDC827A7294670BA00E92450 /* FluidCanvas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FluidCanvas.entitlements; sourceTree = "<group>"; };
+		DDC827BD294789F600E92450 /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC827C12947BB6B00E92450 /* SnapKit in Frameworks */,
+				DDC827AF2946712400E92450 /* StableDiffusion in Frameworks */,
+				DDC827B12946712400E92450 /* StableDiffusionSample in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +60,7 @@
 		DDC8279D294670B900E92450 /* FluidCanvas */ = {
 			isa = PBXGroup;
 			children = (
+				DDC827BD294789F600E92450 /* models */,
 				DDC8279E294670B900E92450 /* AppDelegate.swift */,
 				DDC827A0294670B900E92450 /* ViewController.swift */,
 				DDC827A2294670BA00E92450 /* Assets.xcassets */,
@@ -77,6 +86,11 @@
 			dependencies = (
 			);
 			name = FluidCanvas;
+			packageProductDependencies = (
+				DDC827AE2946712400E92450 /* StableDiffusion */,
+				DDC827B02946712400E92450 /* StableDiffusionSample */,
+				DDC827C02947BB6B00E92450 /* SnapKit */,
+			);
 			productName = FluidCanvas;
 			productReference = DDC8279B294670B900E92450 /* FluidCanvas.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +119,10 @@
 				Base,
 			);
 			mainGroup = DDC82792294670B900E92450;
+			packageReferences = (
+				DDC827AD2946712400E92450 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+				DDC827BF2947BB6B00E92450 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DDC8279C294670B900E92450 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +139,7 @@
 			files = (
 				DDC827A3294670BA00E92450 /* Assets.xcassets in Resources */,
 				DDC827A6294670BA00E92450 /* Main.storyboard in Resources */,
+				DDC827BE294789F600E92450 /* models in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +358,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDC827AD2946712400E92450 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/ml-stable-diffusion";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		DDC827BF2947BB6B00E92450 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDC827AE2946712400E92450 /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC827AD2946712400E92450 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		DDC827B02946712400E92450 /* StableDiffusionSample */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC827AD2946712400E92450 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusionSample;
+		};
+		DDC827C02947BB6B00E92450 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC827BF2947BB6B00E92450 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DDC82793294670B900E92450 /* Project object */;
 }
